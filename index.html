@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Monthsary Dudu ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Segoe UI",Arial,sans-serif;
+    background:#071426;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-5;
+    background:
+        linear-gradient(180deg,#071426 0%,#101a35 43%,#24182d 72%,#090b18 100%);
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-4;
+    pointer-events:none;
+    background:
+        radial-gradient(ellipse at 50% 100%,rgba(255,91,157,.2),transparent 42%),
+        radial-gradient(ellipse at 82% 8%,rgba(255,218,235,.09),transparent 24%),
+        linear-gradient(115deg,transparent 0 46%,rgba(255,255,255,.025) 50%,transparent 54%);
+    opacity:.9;
+}
+
+/* stars */
+
+.stars{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-3;
+}
+
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    border-radius:50%;
+    background:#fff7fb;
+    box-shadow:0 0 9px rgba(255,247,251,.85);
+    animation:twinkle 3s infinite ease-in-out;
+}
+
+@keyframes twinkle{
+    0%,100%{opacity:.2;transform:scale(.7)}
+    50%{opacity:1;transform:scale(1.5)}
+}
+
+/* moon */
+
+.moon{
+    position:fixed;
+    width:145px;
+    height:145px;
+    border-radius:50%;
+    right:8%;
+    top:8%;
+    background:
+        radial-gradient(circle at 35% 30%,#fff,#ffe4f0 55%,#f7b2d3);
+    box-shadow:
+        0 0 28px rgba(255,210,235,.45),
+        0 0 75px rgba(255,100,180,.16);
+    opacity:.78;
+    z-index:-2;
+}
+
+.moon::after{
+    content:"";
+    position:absolute;
+    width:145px;
+    height:145px;
+    border-radius:50%;
+    background:#071426;
+    left:42px;
+    top:-16px;
+}
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.hearts{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:20;
+}
+
+.heart{
+    position:absolute;
+    bottom:-50px;
+    color:#ff6fae;
+    font-size:20px;
+    animation:floatHeart linear forwards;
+    filter:drop-shadow(0 0 8px #ff4f9a);
+}
+
+.falling-heart{
+    position:fixed;
+    top:-40px;
+    z-index:180;
+    pointer-events:none;
+    color:#ff9dca;
+    font-size:20px;
+    filter:drop-shadow(0 0 8px rgba(255,79,157,.8));
+    animation:fallingHeart 3.5s linear forwards;
+}
+
+@keyframes fallingHeart{
+    0%{opacity:0;transform:translateY(0) rotate(0deg) scale(.7)}
+    12%{opacity:1}
+    100%{opacity:0;transform:translateY(110vh) rotate(260deg) scale(1.2)}
+}
+
+@keyframes floatHeart{
+    0%{
+        transform:translateY(0) rotate(0deg) scale(.7);
+        opacity:0;
+    }
+    10%{opacity:1}
+    100%{
+        transform:translateY(-110vh) rotate(360deg) scale(1.5);
+        opacity:0;
+    }
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section{
+    min-height:100vh;
+    padding:100px 7%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    text-align:center;
+}
+
+.small-love{
+    color:#ffacd5;
+    font-size:18px;
+    letter-spacing:5px;
+    text-transform:uppercase;
+    margin-bottom:20px;
+    animation:fadeDown 1.5s ease;
+}
+
+.hero h1{
+    font-family:Georgia,serif;
+    font-size:clamp(50px,10vw,110px);
+    line-height:1;
+    background:linear-gradient(
+        90deg,
+        #fff,
+        #ffb6dc,
+        #ff5fa7,
+        #fff
+    );
+    background-size:300%;
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    animation:
+        shine 5s linear infinite,
+        glowTitle 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes shine{
+    to{background-position:300% center}
+}
+
+@keyframes glowTitle{
+    from{filter:drop-shadow(0 0 8px rgba(255,80,160,.3))}
+    to{filter:drop-shadow(0 0 30px rgba(255,80,160,.8))}
+}
+
+.hero h2{
+    margin-top:25px;
+    font-size:clamp(22px,4vw,38px);
+    font-weight:300;
+    color:#ffe3f1;
+}
+
+.hero p{
+    max-width:700px;
+    margin:30px auto;
+    color:#d8c3d2;
+    font-size:18px;
+    line-height:1.8;
+}
+
+.scroll-btn{
+    margin-top:25px;
+    border:1px solid rgba(255,150,210,.5);
+    background:rgba(255,255,255,.05);
+    color:white;
+    padding:15px 28px;
+    border-radius:50px;
+    cursor:pointer;
+    backdrop-filter:blur(10px);
+    transition:.3s;
+}
+
+.scroll-btn:hover{
+    transform:translateY(-4px);
+    background:rgba(255,80,160,.18);
+    box-shadow:0 0 30px rgba(255,70,150,.3);
+}
+
+@keyframes fadeDown{
+    from{opacity:0;transform:translateY(-30px)}
+    to{opacity:1;transform:translateY(0)}
+}
+
+/* =========================
+   LOVE LETTER
+========================= */
+
+.title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.title span{
+    color:#ff7eb7;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    font-size:13px;
+}
+
+.title h2{
+    font-family:Georgia,serif;
+    font-size:clamp(35px,6vw,60px);
+    margin-top:10px;
+}
+
+.letter{
+    width:min(850px,100%);
+    padding:55px;
+    border-radius:30px;
+    background:rgba(255,255,255,.055);
+    border:1px solid rgba(255,160,210,.18);
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.4),
+        inset 0 0 40px rgba(255,80,160,.03);
+    backdrop-filter:blur(18px);
+    position:relative;
+}
+
+.letter::before{
+    content:"❤";
+    position:absolute;
+    top:-28px;
+    left:50%;
+    transform:translateX(-50%);
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    background:linear-gradient(135deg,#ff4f9d,#a735ff);
+    box-shadow:0 0 30px rgba(255,60,150,.5);
+}
+
+.letter p{
+    color:#eadce5;
+    font-size:18px;
+    line-height:2;
+    margin-bottom:20px;
+}
+
+.signature{
+    margin-top:35px;
+    font-family:cursive;
+    color:#ffacd3;
+    font-size:28px;
+    text-align:right;
+}
+
+/* =========================
+   MEMORIES
+========================= */
+
+.memory-grid{
+    width:min(1100px,100%);
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.memory-intro{
+    max-width:620px;
+    margin:-28px auto 38px;
+    color:#d9c9d5;
+    text-align:center;
+    line-height:1.8;
+    font-size:17px;
+}
+
+.memory{
+    height:390px;
+    position:relative;
+    border-radius:20px;
+    overflow:hidden;
+    cursor:pointer;
+    color:inherit;
+    text-align:left;
+    font:inherit;
+    background:#1a071c;
+    border:1px solid rgba(255,150,210,.15);
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+    transition:.4s;
+}
+
+.memory::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:1;
+    pointer-events:none;
+    background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.16) 50%,transparent 65%);
+    transform:translateX(-120%);
+    transition:transform .7s ease;
+}
+
+.memory:hover{
+    transform:translateY(-10px) scale(1.02);
+    box-shadow:
+        0 25px 60px rgba(255,50,150,.15),
+        0 0 40px rgba(255,50,150,.08);
+}
+
+.memory:hover::after,
+.memory:focus-visible::after{
+    transform:translateX(120%);
+}
+
+.memory:focus-visible{
+    outline:3px solid rgba(255,186,218,.85);
+    outline-offset:5px;
+}
+
+.memory img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.6s;
+}
+
+.memory:hover img{
+    transform:scale(1.1);
+}
+
+.memory-overlay{
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    padding:25px;
+    background:linear-gradient(
+        transparent 35%,
+        rgba(10,0,15,.95)
+    );
+}
+
+.memory-overlay h3{
+    font-family:Georgia,serif;
+    font-size:25px;
+}
+
+.memory-overlay p{
+    color:#d9c5d1;
+    margin-top:8px;
+}
+
+/* =========================
+   PROMISE
+========================= */
+
+.promise{
+    width:min(900px,100%);
+    text-align:center;
+}
+
+.promise-box{
+    padding:60px 35px;
+    border-radius:30px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,80,160,.09),
+            rgba(130,70,255,.07)
+        );
+    border:1px solid rgba(255,150,210,.2);
+    box-shadow:0 30px 80px rgba(0,0,0,.4);
+}
+
+.promise-box h3{
+    font-family:Georgia,serif;
+    font-size:40px;
+    margin-bottom:25px;
+}
+
+.promise-box p{
+    color:#e5d5df;
+    line-height:2;
+    font-size:18px;
+}
+
+/* =========================
+   FINAL
+========================= */
+
+.final{
+    text-align:center;
+    min-height:100vh;
+}
+
+.final .heart-big{
+    font-size:100px;
+    animation:heartbeat 1.5s infinite;
+    filter:drop-shadow(0 0 30px #ff4f9d);
+}
+
+@keyframes heartbeat{
+    0%,100%{transform:scale(1)}
+    15%{transform:scale(1.15)}
+    30%{transform:scale(1)}
+    45%{transform:scale(1.12)}
+}
+
+.final h2{
+    font-family:Georgia,serif;
+    font-size:clamp(45px,9vw,100px);
+    margin:25px 0;
+    background:linear-gradient(90deg,#fff,#ff8fc4,#fff);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+.final p{
+    color:#dbc8d5;
+    max-width:650px;
+    line-height:2;
+    font-size:19px;
+    margin:auto;
+}
+
+/* =========================
+   MUSIC
+========================= */
+
+.music-btn{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    z-index:100;
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    border:1px solid rgba(255,160,210,.5);
+    background:rgba(30,5,30,.7);
+    color:white;
+    font-size:22px;
+    cursor:pointer;
+    backdrop-filter:blur(12px);
+    box-shadow:0 0 25px rgba(255,50,150,.2);
+    transition:.3s;
+}
+
+.music-btn:hover{
+    transform:scale(1.1);
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(5,0,10,.85);
+    backdrop-filter:blur(12px);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:200;
+    opacity:0;
+    visibility:hidden;
+    transition:.4s;
+    padding:20px;
+}
+
+.modal.active{
+    opacity:1;
+    visibility:visible;
+}
+
+.modal-content{
+    width:min(700px,100%);
+    max-height:90vh;
+    overflow-y:auto;
+    background:#17091b;
+    border:1px solid rgba(255,150,210,.25);
+    border-radius:30px;
+    padding:35px;
+    position:relative;
+    box-shadow:0 30px 100px rgba(0,0,0,.7);
+    transform:scale(.85);
+    transition:.4s;
+}
+
+.modal-content::before{
+    content:"A MOMENT TO KEEP";
+    display:block;
+    margin-bottom:22px;
+    color:#ff9fc9;
+    font-size:11px;
+    letter-spacing:3px;
+}
+
+.modal.active .modal-content{
+    transform:scale(1);
+}
+
+.modal-content img{
+    width:100%;
+    max-height:420px;
+    object-fit:cover;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+.modal-content h2{
+    font-family:Georgia,serif;
+    color:#ff9ac8;
+    margin-bottom:15px;
+}
+
+.modal-content p{
+    color:#dfced8;
+    line-height:1.8;
+}
+
+.close{
+    position:absolute;
+    top:15px;
+    right:20px;
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    border:0;
+    background:rgba(255,255,255,.1);
+    color:white;
+    font-size:25px;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.close:hover,
+.close:focus-visible{
+    background:rgba(255,120,175,.3);
+    outline:2px solid rgba(255,190,220,.8);
+    outline-offset:2px;
+}
+
+@media(prefers-reduced-motion:reduce){
+    *,
+    *::before,
+    *::after{
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        scroll-behavior:auto !important;
+        transition-duration:.01ms !important;
+    }
+
+    .hearts,
+    .stars{
+        display:none;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:800px){
+
+    .moon{
+        width:100px;
+        height:100px;
+        right:5%;
+        top:5%;
+    }
+
+    .moon::after{
+        width:100px;
+        height:100px;
+        left:30px;
+        top:-10px;
+    }
+
+    section{
+        padding:80px 6%;
+    }
+
+    .letter{
+        padding:35px 25px;
+    }
+
+    .memory-grid{
+        grid-template-columns:1fr;
+    }
+
+    .memory{
+        height:420px;
+    }
+
+    .promise-box{
+        padding:45px 25px;
+    }
+
+    .final .heart-big{
+        font-size:75px;
+    }
+
+    .modal-content{
+        padding:28px 20px;
+        border-radius:22px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     BACKGROUND ELEMENTS
+========================= -->
+
+<div class="stars" id="stars"></div>
+<div class="moon"></div>
+<div class="hearts" id="hearts"></div>
+
+<!-- MUSIC
+     Put your music file in the same folder.
+     Example: music.mp3
+-->
+<audio id="music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-btn" id="musicBtn" type="button"
+    aria-label="Play background music" aria-pressed="false"
+    onclick="toggleMusic()">♫</button>
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+
+    <h1>Happy Monthsary</h1>
+
+    <h2>My Beautiful Dudu ❤️</h2>
+
+    <p>
+        Tonight isn't just another day on the calendar.
+        It's another little chapter of our story
+        another reminder that I'm lucky to have you.
+    </p>
+
+    <button class="scroll-btn"
+            onclick="startMusicAndOpenHeart()">
+        Open My Heart 💌
+    </button>
+
+</section>
+
+<!-- =========================
+     LOVE LETTER
+========================= -->
+
+<section id="letter">
+
+    <div class="title">
+        <span>From My Heart</span>
+        <h2>For You, Dudu ❤️</h2>
+    </div>
+
+    <div class="letter">
+
+        <p>
+            My Dudu,
+        </p>
+
+        <p>
+            Happy Monthsary
+        </p>
+
+        <p>
+            I don't know if words will ever be enough to explain
+            how important you are to me, but I want to try anyway.
+        </p>
+
+        <p>
+            Thank you for being part of my life.
+            Thank you for the little moments, the conversations,
+            the laughter, the memories, and even the moments
+            when things aren't perfect.
+        </p>
+
+        <p>
+            I don't need a perfect love story.
+            I just want a real one, ours.
+        </p>
+
+        <p>
+            If life gives us beautiful days, I want to celebrate
+            them with you. And if life gives us difficult days,
+            I want to be beside you through those too.
+        </p>
+
+        <p>
+            I may not always know exactly what tomorrow will bring,
+            but one thing I know is that I want to keep making
+            memories with you.
+        </p>
+
+        <p>
+            You are not just someone I love.
+            You are someone I want to keep choosing.
+        </p>
+
+        <p>
+            Happy Monthsary, Dudu.
+            Thank you for being my person. ❤️
+        </p>
+
+        <div class="signature">
+            Forever yours,<br>
+            Glenn ❤️
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     MEMORIES
+========================= -->
+
+<section>
+
+    <div class="title">
+        <span>Our Little Memories</span>
+        <h2>Moments With You 📸</h2>
+    </div>
+
+    <p class="memory-intro">
+        Every photo holds a feeling, a story, and a little piece of us.
+        Click each moment to remember why these memories mean so much to me.
+    </p>
+
+    <div class="memory-grid">
+
+        <!-- CHANGE photo1.jpg TO YOUR PHOTO -->
+
+        <button class="memory" type="button" aria-label="Open Our Beginning memory"
+             onclick="openMemory(
+             'Our Beginning ❤️',
+             'Every beautiful story has a beginning. I will always treasure the moment our story started because it eventually led me to you.',
+             'photo1.jpg')">
+
+            <img src="photo1.jpg" alt="A photo from the beginning of our relationship" loading="lazy">
+
+            <div class="memory-overlay">
+                <h3>Our Beginning ❤️</h3>
+                <p>Where our story started...</p>
+            </div>
+
+        </button>
+
+
+        <button class="memory" type="button" aria-label="Open Your Smile memory"
+             onclick="openMemory(
+             'Your Smile 🌹',
+             'There is something about your smile that can make an ordinary moment feel special. Never forget how beautiful you are to me.',
+             'photo2.jpg')">
+
+            <img src="photo2.jpg" alt="Dudu smiling" loading="lazy">
+
+            <div class="memory-overlay">
+                <h3>Your Smile 🌹</h3>
+                <p>The smile I love...</p>
+            </div>
+
+        </button>
+
+
+        <button class="memory" type="button" aria-label="Open Us memory"
+             onclick="openMemory(
+             'Us 💕',
+             'No matter where we are or what we are doing, my favorite part is simply knowing that I get to share these moments with you.',
+             'photo3.jpg')">
+
+            <img src="photo3.jpg" alt="A photo of us together" loading="lazy">
+
+            <div class="memory-overlay">
+                <h3>Us 💕</h3>
+                <p>Just you and me...</p>
+            </div>
+
+        </button>
+
+
+        <button class="memory" type="button" aria-label="Open Little Things memory"
+             onclick="openMemory(
+             'Little Things ✨',
+             'Sometimes the smallest moments become the memories we remember the most. I want many more little moments with you.',
+             'photo4.jpg')">
+
+            <img src="photo4.jpg" alt="A small moment we shared" loading="lazy">
+
+            <div class="memory-overlay">
+                <h3>Little Things ✨</h3>
+                <p>Small moments, big memories.</p>
+            </div>
+
+        </button>
+
+
+        <button class="memory" type="button" aria-label="Open My Favorite Person memory"
+             onclick="openMemory(
+             'My Favorite Person 🥰',
+             'Out of all the people in this world, I am grateful that our paths crossed. You became someone incredibly special to me.',
+             'photo5.jpg')">
+
+            <img src="photo5.jpg" alt="A photo of my favorite person" loading="lazy">
+
+            <div class="memory-overlay">
+                <h3>My Favorite Person 🥰</h3>
+                <p>You mean more than you know.</p>
+            </div>
+
+        </button>
+
+
+        <button class="memory" type="button" aria-label="Open Our Future memory"
+             onclick="openMemory(
+             'Our Future 🌙',
+             'There are still so many memories we have not made yet. And honestly, that is one of the things I am most excited about.',
+             'photo6.jpg')">
+
+            <img src="photo6.jpg" alt="A photo representing our future together" loading="lazy">
+
+            <div class="memory-overlay">
+                <h3>Our Future 🌙</h3>
+                <p>Many more chapters to come...</p>
+            </div>
+
+        </button>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     PROMISE
+========================= -->
+
+<section>
+
+    <div class="title">
+        <span>A Promise</span>
+        <h2>My Promise To You 💍</h2>
+    </div>
+
+    <div class="promise">
+
+        <div class="promise-box">
+
+            <h3>I'll Keep Choosing You ❤️</h3>
+
+            <p>
+                I promise to appreciate the little things about you.
+                I promise to listen, to understand, and to keep learning
+                how to love you better.
+            </p>
+
+            <br>
+
+            <p>
+                I promise that when things get difficult,
+                I won't forget all the beautiful reasons
+                why you became so important to me.
+            </p>
+
+            <br>
+
+            <p>
+                And most importantly,
+                I promise to keep creating memories with you,
+                one day at a time.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     FINAL
+========================= -->
+
+<section class="final">
+
+    <div class="heart-big">
+        ❤️
+    </div>
+
+    <h2>I Love You, Dudu</h2>
+
+    <p>
+        Maybe this is just a little website,
+        but every word here comes from my heart.
+    </p>
+
+    <br>
+
+    <p>
+        Thank you for being part of my story.
+        Thank you for being you.
+    </p>
+
+    <br>
+
+    <p>
+        Here's to more laughter,
+        more memories,
+        more dreams,
+        more adventures,
+        and more months together.
+    </p>
+
+    <br>
+
+    <p>
+        <strong>
+            Happy Monthsary, my Dudu. ❤️
+        </strong>
+    </p>
+
+    <br>
+
+    <p style="color:#ff9fc9;">
+        Forever and always — Glenn ❤️
+    </p>
+
+</section>
+
+<!-- =========================
+     MEMORY MODAL
+========================= -->
+
+<div class="modal" id="modal">
+
+    <div class="modal-content">
+
+        <button class="close" id="closeModal" type="button"
+            aria-label="Close memory">×</button>
+
+        <img id="modalImage" src="" alt="Memory">
+
+        <h2 id="modalTitle"></h2>
+
+        <p id="modalText"></p>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =========================
+   CREATE STARS
+========================= */
+
+const stars = document.getElementById("stars");
+
+for(let i = 0; i < 120; i++){
+
+    const star = document.createElement("div");
+
+    star.className = "star";
+
+    star.style.left = Math.random() * 100 + "%";
+    star.style.top = Math.random() * 100 + "%";
+
+    star.style.animationDelay =
+        Math.random() * 4 + "s";
+
+    star.style.opacity =
+        Math.random();
+
+    stars.appendChild(star);
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+const hearts = document.getElementById("hearts");
+
+function createHeart(){
+
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+
+    const symbols = [
+        "❤",
+        "♡",
+        "💕",
+        "💗",
+        "💖",
+        "🌹"
+    ];
+
+    heart.innerHTML =
+        symbols[Math.floor(Math.random()*symbols.length)];
+
+    heart.style.left =
+        Math.random()*100 + "%";
+
+    heart.style.fontSize =
+        (12 + Math.random()*25) + "px";
+
+    heart.style.animationDuration =
+        (6 + Math.random()*7) + "s";
+
+    hearts.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },14000);
+}
+
+setInterval(createHeart,600);
+
+
+/* =========================
+   MUSIC
+========================= */
+
+const music =
+    document.getElementById("music");
+
+const musicBtn =
+    document.getElementById("musicBtn");
+
+let playing = false;
+
+function updateMusicButton(){
+    musicBtn.innerHTML = playing ? "⏸" : "♫";
+    musicBtn.setAttribute("aria-pressed", String(playing));
+    musicBtn.setAttribute(
+        "aria-label",
+        playing ? "Pause background music" : "Play background music"
+    );
+}
+
+function toggleMusic(){
+
+    if(!playing){
+
+        music.play()
+        .then(()=>{
+            playing = true;
+            updateMusicButton();
+        })
+        .catch(()=>{
+            alert(
+                "Please make sure music.mp3 is inside the same folder as this HTML file."
+            );
+        });
+
+    }else{
+
+        music.pause();
+
+        playing = false;
+        updateMusicButton();
+    }
+}
+
+
+/* =========================
+   OPEN MY HEART
+   Starts the music from the
+   user's button click, then
+   opens the love letter.
+   ========================= */
+
+function startMusicAndOpenHeart(){
+
+    // Start music immediately from the user's click.
+    // This works with modern browser autoplay rules
+    // because the play() call happens inside a click.
+    if(!playing){
+
+        music.play()
+        .then(()=>{
+            playing = true;
+            updateMusicButton();
+        })
+        .catch(()=>{
+            alert(
+                "Please make sure music.mp3 is inside the same folder as this HTML file."
+            );
+        });
+    }
+
+    // Then smoothly reveal the love letter.
+    document.getElementById("letter").scrollIntoView({
+        behavior:"smooth"
+    });
+}
+
+
+/* =========================
+   MEMORY MODAL
+========================= */
+
+const modal =
+    document.getElementById("modal");
+
+const modalImage =
+    document.getElementById("modalImage");
+
+const modalTitle =
+    document.getElementById("modalTitle");
+
+const modalText =
+    document.getElementById("modalText");
+
+const closeModalButton =
+    document.getElementById("closeModal");
+
+closeModalButton.addEventListener("click",closeMemory);
+
+let audioContext;
+let memorySoundIndex = 0;
+
+function playMemorySfx(){
+    const AudioContext =
+        window.AudioContext || window.webkitAudioContext;
+
+    if(!AudioContext) return;
+
+    audioContext ||= new AudioContext();
+
+    const notes = [392,440,494,523,587,659];
+    const oscillator = audioContext.createOscillator();
+    const gain = audioContext.createGain();
+    const now = audioContext.currentTime;
+
+    oscillator.type = "sine";
+    oscillator.frequency.value = notes[memorySoundIndex % notes.length];
+    memorySoundIndex++;
+
+    gain.gain.setValueAtTime(.0001,now);
+    gain.gain.exponentialRampToValueAtTime(.12,now + .02);
+    gain.gain.exponentialRampToValueAtTime(.0001,now + .65);
+
+    oscillator.connect(gain);
+    gain.connect(audioContext.destination);
+    oscillator.start(now);
+    oscillator.stop(now + .7);
+}
+
+function createFallingHeart(){
+    const heart = document.createElement("div");
+    heart.className = "falling-heart";
+    heart.innerText = Math.random() > .25 ? "❤" : "♡";
+    heart.style.left = Math.random() * 100 + "%";
+    heart.style.fontSize = 14 + Math.random() * 22 + "px";
+    heart.style.animationDelay = Math.random() * .8 + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(()=>heart.remove(),4500);
+}
+
+function createFallingHeartBurst(){
+    for(let i = 0; i < 14; i++){
+        setTimeout(createFallingHeart,i * 65);
+    }
+}
+
+
+function openMemory(title,text,image){
+
+    modalTitle.innerText = title;
+
+    modalText.innerText = text;
+
+    modalImage.src = image;
+    modalImage.alt = title;
+
+    modal.classList.add("active");
+
+    closeModalButton.focus();
+
+    playMemorySfx();
+    createFallingHeartBurst();
+    createBurst();
+}
+
+
+function closeMemory(){
+
+    modal.classList.remove("active");
+}
+
+
+modal.addEventListener("click",(e)=>{
+
+    if(e.target === modal){
+
+        closeMemory();
+
+    }
+
+});
+
+document.addEventListener("keydown",(e)=>{
+    if(e.key === "Escape" && modal.classList.contains("active")){
+        closeMemory();
+    }
+});
+
+
+/* =========================
+   HEART CLICK BURST
+========================= */
+
+document.addEventListener("click",(e)=>{
+
+    if(
+        e.target.closest(".memory") ||
+        e.target.closest(".music-btn") ||
+        e.target.closest(".close")
+    ) return;
+
+    createClickHeart(
+        e.clientX,
+        e.clientY
+    );
+
+});
+
+
+function createClickHeart(x,y){
+
+    const heart =
+        document.createElement("div");
+
+    heart.innerHTML = "❤";
+
+    heart.style.position = "fixed";
+    heart.style.left = x + "px";
+    heart.style.top = y + "px";
+    heart.style.color = "#ff6fae";
+    heart.style.fontSize = "25px";
+    heart.style.pointerEvents = "none";
+    heart.style.zIndex = "9999";
+    heart.style.filter =
+        "drop-shadow(0 0 10px #ff4f9d)";
+
+    document.body.appendChild(heart);
+
+    heart.animate(
+        [
+            {
+                transform:"translate(-50%,-50%) scale(.4)",
+                opacity:1
+            },
+            {
+                transform:
+                "translate(-50%,-150px) scale(1.5)",
+                opacity:0
+            }
+        ],
+        {
+            duration:900,
+            easing:"ease-out"
+        }
+    );
+
+    setTimeout(()=>{
+        heart.remove();
+    },900);
+}
+
+
+function createBurst(){
+
+    for(let i=0;i<15;i++){
+
+        setTimeout(()=>{
+
+            const x =
+                window.innerWidth/2 +
+                (Math.random()-.5)*300;
+
+            const y =
+                window.innerHeight/2 +
+                (Math.random()-.5)*200;
+
+            createClickHeart(x,y);
+
+        },i*40);
+    }
+}
+
+</script>
+
+</body>
+</html>
